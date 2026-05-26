@@ -8,7 +8,7 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ───────────────────────────────────────────────────────────────
-     1. BOOT SEQUENCE (joue 1 fois par session)
+     1. BOOT SEQUENCE
      ─────────────────────────────────────────────────────────────── */
   const bootEl = document.getElementById('boot');
   const bootOutput = document.getElementById('boot-output');
@@ -119,10 +119,9 @@
       'hero.stat3': 'années en cyber',
 
       'about.title': '$ whoami',
-      'about.p1': 'J\'ai commencé l\'ESGI en 2022 sans aucun bagage technique, avec <strong>11.5 de moyenne</strong> en 1ère année. En 3ème année, j\'ai eu le déclic en découvrant la cybersécurité : ma moyenne est passée à <strong>16+</strong> et n\'est jamais redescendue.',
-      'about.p2': 'Aujourd\'hui en 5ème année, je suis <strong>alternant Expert Technique chez Oodrive</strong> où je travaille sur l\'infrastructure Linux/RHEL, Ansible, déploiements et migrations clients. Mon ambition : devenir analyste SOC à court terme, puis évoluer vers la <strong>sécurité offensive (Red Team / Pentest)</strong>, mon domaine de passion confirmé tout au long du cursus.',
-      'about.p3': 'Ce qui m\'anime : <strong>l\'exploitation bas niveau</strong>, le <strong>reverse engineering</strong>, ainsi que <strong>la sécurité au sein d\'une infrastructure</strong>. Mes meilleures notes sont aussi mes plus grandes fiertés.',
-      'about.progressionTitle': '~ Progression académique',
+      'about.p1': 'J’ai intégré l’ESGI en 2022 sans expérience technique préalable. Après une première année validée avec une moyenne de <strong>11,5</strong>, j’ai développé un réel intérêt pour la cybersécurité dès la 3ᵉ année, ce qui m’a permis d’atteindre une moyenne supérieure à <strong>16</strong> et de maintenir ce niveau depuis.',
+      'about.p2': 'Actuellement en 5ᵉ année, j’effectue mon alternance en tant qu’<strong>Expert Technique chez Oodrive</strong>, où j’interviens sur des environnements Linux/RHEL, l’automatisation avec Ansible, ainsi que sur des projets de déploiement et de migration client. À court terme, je souhaite évoluer vers un poste d’analyste SOC, avec pour objectif à plus long terme de me spécialiser en <strong>sécurité offensive (Red Team / Pentest)</strong>, domaine qui me passionne depuis plusieurs années.',
+      'about.p3': 'Je porte un intérêt particulier à <strong>l’exploitation bas niveau</strong>, au <strong>reverse engineering</strong> et à <strong>la sécurisation des infrastructures</strong>. Les excellents résultats obtenus dans ces domaines reflètent autant mon investissement que ma passion pour la cybersécurité.',      'about.progressionTitle': '~ Progression académique',
       'about.year2022': 'Entrée à l\'ESGI',
       'about.year2024': 'Entrée en Spécialité Cybersécurité',
       'about.year2026': 'Mastère · Alternance Oodrive',
