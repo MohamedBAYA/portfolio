@@ -122,7 +122,14 @@
           <ul class="hero__stats" aria-label="Statistiques clés">
             <li><strong>3+</strong><span data-i18n="hero.stat3">années en cyber</span></li>
             <li><strong>4</strong><span>ans d'alternance en informatique</span></li>
-            <li><strong>Bachelor</strong><span>Diplômé avec mention Bien</span></li>
+            <li class="hero__stats-card">
+              <strong>Bachelor</strong>
+              <span>Diplômé avec mention Bien</span>
+            </li>
+            <li class="hero__stats-card hero__stats-card--soon">
+              <strong>Mastère</strong>
+              <span>Fin de préparation</span>
+            </li>
           </ul>
       </div>
 
@@ -192,7 +199,7 @@
           <div class="progression__step progression__step--current">
             <div class="progression__dot"></div>
             <span class="progression__year">2026</span>
-            <span class="progression__note">18.06</span>
+            <span class="progression__note">17.06</span>
             <span class="progression__label" data-i18n="about.year2026">Mastère · Alternance Oodrive</span>
           </div>
         </div>
@@ -200,58 +207,56 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         PARCOURS ACADÉMIQUE
+         PARCOURS
          ═══════════════════════════════════════════════════════════════════ -->
     <section class="section" id="parcours">
       <header class="section__header">
         <span class="section__num">02</span>
-        <h2 class="section__title" data-i18n="parcours.title">$ cat ./parcours.log</h2>
+        <h2 class="section__title">Parcours</h2>
         <span class="section__rule"></span>
       </header>
 
-      <p class="parcours__intro" data-i18n="parcours.intro">
-        On peut suivre ici l’évolution de mes compétences trimestre par trimestre.
-      </p>
+      <p class="section__subtitle">Mon évolution technique, de la base système jusqu’à la cybersécurité opérationnelle.</p>
 
       <div class="parcours__grid">
         <article class="parcours__card">
           <div class="parcours__header">
-            <p class="parcours__meta" data-i18n="parcours.domain1.meta">2022 · 2023</p>
-            <h3 class="parcours__title-card" data-i18n="parcours.domain1.title">Fondations système & réseau</h3>
+            <p class="parcours__meta">2022 – 2023</p>
+            <h3 class="parcours__title-card">Bases systèmes et réseaux</h3>
           </div>
-          <p class="parcours__summary" data-i18n="parcours.domain1.summary">Je commence par comprendre les infrastructures, le Linux, les protocoles réseau et la logique de bas niveau pour poser une base technique solide.</p>
+          <p class="parcours__summary">Maîtrise de Linux, administration serveur et protocoles réseau. Pose d’une fondation solide pour des environnements sécurisés.</p>
         </article>
 
         <article class="parcours__card">
           <div class="parcours__header">
-            <p class="parcours__meta" data-i18n="parcours.domain2.meta">2023 · 2024</p>
-            <h3 class="parcours__title-card" data-i18n="parcours.domain2.title">Découverte cyber</h3>
+            <p class="parcours__meta">2023 – 2024</p>
+            <h3 class="parcours__title-card">Premiers pas en cybersécurité</h3>
           </div>
-          <p class="parcours__summary" data-i18n="parcours.domain2.summary">Cryptographie, sécurisation des systèmes, vulnérabilités et premiers usages concrets de la cybersécurité, avec une approche plus pratique que théorique.</p>
+          <p class="parcours__summary">Apprentissage des vulnérabilités, cryptographie et audits. Mise en pratique avec des analyses d’attaque et des exercices concrets.</p>
         </article>
 
         <article class="parcours__card">
           <div class="parcours__header">
-            <p class="parcours__meta" data-i18n="parcours.domain3.meta">2024 · 2025</p>
-            <h3 class="parcours__title-card" data-i18n="parcours.domain3.title">Offensive & reverse</h3>
+            <p class="parcours__meta">2024 – 2025</p>
+            <h3 class="parcours__title-card">Offensive et reverse engineering</h3>
           </div>
-          <p class="parcours__summary" data-i18n="parcours.domain3.summary">Exploitation de binaires, reverse engineering, assembly, sandboxing et méthodes de test d’intrusion pour comprendre comment les attaques se construisent.</p>
+          <p class="parcours__summary">Exploitation de binaires, assembly et reverse engineering. Construction de scénarios d’attaque et compréhension approfondie des failles.</p>
         </article>
 
         <article class="parcours__card">
           <div class="parcours__header">
-            <p class="parcours__meta" data-i18n="parcours.domain4.meta">2025 · 2026</p>
-            <h3 class="parcours__title-card" data-i18n="parcours.domain4.title">Défense & production</h3>
+            <p class="parcours__meta">2025 – 2026</p>
+            <h3 class="parcours__title-card">Production et défense</h3>
           </div>
-          <p class="parcours__summary" data-i18n="parcours.domain4.summary">Alternance chez Oodrive : Linux/RHEL en production, Ansible, déploiements, migrations clients, hardening, détection, SIEM et réponse aux incidents.</p>
+          <p class="parcours__summary">Alternance Oodrive : Linux/RHEL, Ansible, hardening, déploiements et détection en environnement client.</p>
         </article>
 
         <article class="parcours__card">
           <div class="parcours__header">
-            <p class="parcours__meta" data-i18n="parcours.domain5.meta">Transversal</p>
-            <h3 class="parcours__title-card" data-i18n="parcours.domain5.title">Automatisation & veille</h3>
+            <p class="parcours__meta">Transversal</p>
+            <h3 class="parcours__title-card">Automatisation & veille</h3>
           </div>
-          <p class="parcours__summary" data-i18n="parcours.domain5.summary">Python, Bash, Rust, scripts, OSINT, forensics et veille sur les techniques d’attaque pour transformer mon parcours en outils réutilisables.</p>
+          <p class="parcours__summary">Scripts Python/Bash, OSINT et outils d’analyse. Automation des workflows et veille sur les techniques d’attaque.</p>
         </article>
       </div>
     </section>
@@ -262,86 +267,58 @@
     <section class="section" id="skills">
       <header class="section__header">
         <span class="section__num">03</span>
-        <h2 class="section__title" data-i18n="skills.title">$ ls ./skills</h2>
+        <h2 class="section__title">Compétences clés</h2>
         <span class="section__rule"></span>
       </header>
+
+      <p class="section__subtitle">Regroupées par pratique, avec un focus sur l’offensive, la défense et l’infrastructure.</p>
 
       <div class="skills">
         <article class="skill">
           <header class="skill__header">
-            <h3 class="skill__title" data-i18n="skills.offensive.title">Sécurité offensive</h3>
-            <span class="skill__level skill__level--advanced" data-i18n="skills.advanced">Avancé</span>
+            <h3 class="skill__title">Sécurité offensive</h3>
           </header>
           <ul class="skill__list">
-            <li>Shellcode <code>18.75</code></li>
-            <li><span data-i18n="skills.offensive.binary">Exploitation binaire</span> <code>18</code></li>
-            <li><span data-i18n="skills.offensive.python">Sécurité Python</span> <code>18</code></li>
-            <li>Buffer overflow · ROP · Sandboxing</li>
+            <li>Tests d’intrusion / Red Team</li>
+            <li>Exploitation binaire, ROP, shellcode</li>
+            <li>Reverse engineering et analyse de malwares</li>
+            <li>Vulnérabilités web et applications</li>
           </ul>
         </article>
 
         <article class="skill">
           <header class="skill__header">
-            <h3 class="skill__title" data-i18n="skills.reverse.title">Reverse engineering</h3>
-            <span class="skill__level skill__level--advanced" data-i18n="skills.advanced">Avancé</span>
+            <h3 class="skill__title">Défense & détection</h3>
           </header>
           <ul class="skill__list">
-            <li>Reverse <code>17</code></li>
-            <li><span data-i18n="skills.reverse.asm">Assembleur</span> <code>18</code></li>
-            <li><span data-i18n="skills.reverse.exploits">Gestion d'exploits</span> <code>20</code></li>
-            <li>Ghidra · IDA · radare2 · gdb/pwndbg</li>
+            <li>Blue Team, SOC et détection d’intrusions</li>
+            <li>SIEM / Wazuh / Sigma</li>
+            <li>Incident response et audit de sécurité</li>
+            <li>Forensics et investigation</li>
           </ul>
         </article>
 
         <article class="skill">
           <header class="skill__header">
-            <h3 class="skill__title" data-i18n="skills.sysadmin.title">Admin système & Infra</h3>
-            <span class="skill__level skill__level--advanced" data-i18n="skills.advanced">Avancé</span>
+            <h3 class="skill__title">Systèmes & infrastructure</h3>
           </header>
           <ul class="skill__list">
-            <li>Linux / RHEL · LPIC-303 <code>16</code></li>
-            <li>Ansible · Bash · IaC</li>
-            <li><span data-i18n="skills.sysadmin.prod">Production réelle (Oodrive)</span></li>
-            <li><span data-i18n="skills.sysadmin.hardening">Hardening CIS · audits</span></li>
+            <li>Linux / RHEL / Red Hat</li>
+            <li>Ansible, déploiements et hardening</li>
+            <li>Active Directory et gestion IAM</li>
+            <li>Réseau, TCP/IP, VPN et firewall</li>
           </ul>
         </article>
 
         <article class="skill">
           <header class="skill__header">
-            <h3 class="skill__title" data-i18n="skills.defensive.title">Sécurité défensive</h3>
-            <span class="skill__level skill__level--intermediate" data-i18n="skills.intermediate">Intermédiaire</span>
+            <h3 class="skill__title">Développement & automation</h3>
           </header>
           <ul class="skill__list">
-            <li>Wazuh · SIEM</li>
-            <li><span data-i18n="skills.defensive.blue">Blue team · SOC</span></li>
-            <li><span data-i18n="skills.defensive.detect">Règles Sigma · détection</span></li>
-            <li><span data-i18n="skills.defensive.ir">Réponse à incident</span></li>
-          </ul>
-        </article>
-
-        <article class="skill">
-          <header class="skill__header">
-            <h3 class="skill__title" data-i18n="skills.network.title">Réseau & Cloud</h3>
-            <span class="skill__level skill__level--intermediate" data-i18n="skills.intermediate">Intermédiaire</span>
-          </header>
-          <ul class="skill__list">
-            <li>CCNA 1 &amp; 2 · CCNA Security</li>
-            <li>GCP <span data-i18n="skills.network.prep">(en préparation)</span></li>
-            <li>Azure FYC</li>
-            <li>TCP/IP · DNS · VPN · Firewall</li>
-          </ul>
-        </article>
-
-        <article class="skill">
-          <header class="skill__header">
-            <h3 class="skill__title" data-i18n="skills.dev.title">Développement & Scripting</h3>
-            <span class="skill__level skill__level--advanced" data-i18n="skills.solid">Solide</span>
-          </header>
-          <ul class="skill__list">
-            <li>Python · Bash · Rust <code>18</code></li>
-            <li>PHP / SQL · Git</li>
-            <li><span data-i18n="skills.dev.llm">Fine-tuning LLM (Llama 3, Mistral)</span></li>
-            <li><span data-i18n="skills.dev.prod">Projets en production</span></li>
+            <li>Python, Bash, Java et scripting</li>
+            <li>Automatisation et outils de sécurité</li>
+            <li>Projets en production / CI</li>
+            <li>OSINT et veille technologique</li>
           </ul>
         </article>
       </div>
@@ -353,119 +330,116 @@
     <section class="section" id="projects">
       <header class="section__header">
         <span class="section__num">04</span>
-        <h2 class="section__title" data-i18n="projects.title">$ cat ./projects</h2>
+        <h2 class="section__title">Projets</h2>
         <span class="section__rule"></span>
       </header>
 
+      <p class="section__subtitle">Cas concrets et compétences mises en œuvre, orientés sécurité et production.</p>
+
       <div class="projects">
 
-        <!-- PROJET 1 : Vulnerability Analyzer -->
         <article class="project project--featured">
-          <div class="project__badge" data-i18n="projects.featured">★ Projet phare · IA × Cyber</div>
+          <div class="project__badge">Projet phare</div>
           <div class="project__content">
             <header class="project__header">
-              <h3 class="project__title">Vulnerability Analyzer</h3>
+              <h3 class="project__title">Plateforme de détection de vulnérabilités</h3>
               <div class="project__tags">
                 <span class="tag">LLM</span>
                 <span class="tag">Rust</span>
-                <span class="tag">Python</span>
-                <span class="tag">Llama 3</span>
-                <span class="tag">Mistral 7B</span>
+                <span class="tag">Sécurité code</span>
+                <span class="tag">IA</span>
               </div>
             </header>
-            <p class="project__desc" data-i18n="projects.vuln.desc">
-              Outil d'analyse de code orienté sécurité par <strong>fine-tuning de LLM</strong> (Llama 3, Mistral 7B) — détection de CVE et mauvaises pratiques. Décliné en version Rust et interface web. Modèles publiés sur Hugging Face.
+            <p class="project__desc">
+              Développement d’un moteur d’analyse de code orienté sécurité, basé sur des modèles LLM. J’ai conçu la chaîne de traitement, l’intégration Rust/Python et la publication d’un modèle sur Hugging Face.
             </p>
             <div class="project__stats">
-              <span><code>Rust 18/20</code></span>
-              <span><code>Projet annuel 17/20</code></span>
+              <span>Delivery du prototype en version Rust</span>
+              <span>Focus sur la détection de CVE et de mauvaises pratiques</span>
             </div>
             <div class="project__links">
               <a href="https://github.com/MohamedBAYA" class="project__link" target="_blank" rel="noopener">→ GitHub</a>
               <a href="https://huggingface.co/MomoD2R" class="project__link" target="_blank" rel="noopener">→ Hugging Face</a>
-              <!-- <a href="#" class="project__link" data-i18n="projects.demo">→ Démo</a> -->
             </div>
           </div>
           <div class="project__visual">
-            <pre class="project__code"><span class="c">// Vulnerability detection</span>
-<span class="kw">async fn</span> <span class="fn">analyze</span>(code: &amp;<span class="ty">str</span>) -&gt; <span class="ty">Vec</span>&lt;CVE&gt; {
-    <span class="kw">let</span> ctx = Llama3::<span class="fn">load</span>(<span class="s">"fine-tuned"</span>);
-    ctx.<span class="fn">infer</span>(code)
+            <pre class="project__code"><span class="c">// Exemple de pipeline de détection</span>
+<span class="kw">async fn</span> <span class="fn">analyze</span>(code: &amp;<span class="ty">str</span>) -&gt; <span class="ty">Vec</span>&lt;Finding&gt; {
+    let model = Model::<span class="fn">load</span>(<span class="s">"fine-tuned"</span>);
+    model.<span class="fn">infer</span>(code)
        .<span class="fn">await</span>
-       .<span class="fn">filter</span>(|c| c.severity &gt;= <span class="n">7.0</span>)
+       .<span class="fn">filter</span>(|item| item.severity &gt;= <span class="n">7.0</span>)
        .<span class="fn">collect</span>()
 }</pre>
           </div>
         </article>
 
-        <!-- PROJET 2 : pwn.college -->
         <article class="project">
           <div class="project__content">
             <header class="project__header">
-              <h3 class="project__title">pwn.college — Sandboxing</h3>
+              <h3 class="project__title">Exploitation & sandboxing</h3>
               <div class="project__tags">
-                <span class="tag">Exploitation</span>
+                <span class="tag">Binary</span>
                 <span class="tag">ROP</span>
-                <span class="tag">chroot</span>
+                <span class="tag">Sandbox</span>
               </div>
             </header>
-            <p class="project__desc" data-i18n="projects.pwn.desc">
-              Résolution de challenges d'exploitation bas niveau : buffer overflow, ROP chains, sandboxing/chroot. <strong>Seul de ma promotion à finir la section Sandboxing</strong> (18 exercices résolus).
+            <p class="project__desc">
+              Réalisation d’un parcours avancé de reverse/exploitation : buffer overflow, chaînage ROP et confinement. Projet axé sur la rigueur des tests et l’automatisation des environnements sécurisés.
             </p>
             <div class="project__stats">
-              <span><code>20/20</code></span>
-              <span data-i18n="projects.pwn.stat">Parcours de CTF en exploitation de binaires</span>
+              <span>18 défis complets résolus</span>
+              <span>Approche méthodique pour reproduire et corriger des failles</span>
             </div>
             <div class="project__links">
-              <a href="https://pwn.college/hacker/52964" class="project__link" target="_blank" rel="noopener">→ Voir mon profil pwn.college</a>
+              <a href="https://pwn.college/hacker/52964" class="project__link" target="_blank" rel="noopener">→ Profil pwn.college</a>
             </div>
           </div>
         </article>
 
-        <!-- PROJET 3 : RAT (présenté comme étude de cas défensive) -->
         <article class="project">
           <div class="project__content">
             <header class="project__header">
-              <h3 class="project__title" data-i18n="projects.rat.title">RAT multi-OS — Étude de cas défensive</h3>
+              <h3 class="project__title">Étude de cas défensive sur RAT</h3>
               <div class="project__tags">
                 <span class="tag">Python</span>
-                <span class="tag">Detection</span>
+                <span class="tag">Détection</span>
                 <span class="tag">Wazuh</span>
                 <span class="tag">Sigma</span>
               </div>
             </header>
-            <p class="project__desc" data-i18n="projects.rat.desc">
-              Développement d'un outil d'accès distant (keylogger, accès caméra, shell distant) fonctionnel sur Linux/macOS/Windows, repackagé en <strong>étude de cas défensive</strong> : architecture, démo vidéo, et <strong>règles Sigma/Wazuh de détection</strong> que j'ai écrites pour le détecter.
+            <p class="project__desc">
+              Analyse d’un accès distant multi-OS avec production de règles de détection et de recommandations de durcissement. Objectif : transformer une menace potentielle en piste de défense opérationnelle.
             </p>
             <div class="project__stats">
-              <span><code>Sécurité Python 18/20</code></span>
+              <span>Architecture de détection et règles Sigma</span>
+              <span>Focus sur la traçabilité et la réponse</span>
             </div>
             <div class="project__links">
-              <a href="#" class="project__link" data-i18n="projects.rat.cta">→ (Dépôt en cours de mise à jour - Indisponible pour le moment)</a>
+              <a href="#" class="project__link">→ Dossier technique en préparation</a>
             </div>
           </div>
         </article>
 
-        <!-- PROJET 4 : Password Manager Assembleur -->
         <article class="project">
           <div class="project__content">
             <header class="project__header">
-              <h3 class="project__title" data-i18n="projects.pwm.title">Password Manager en Assembleur</h3>
+              <h3 class="project__title">Gestionnaire de mots de passe en assembleur</h3>
               <div class="project__tags">
                 <span class="tag">x86</span>
                 <span class="tag">ASM</span>
-                <span class="tag">Low-level</span>
+                <span class="tag">Sécurité</span>
               </div>
             </header>
-            <p class="project__desc" data-i18n="projects.pwm.desc">
-              Gestionnaire de mots de passe développé entièrement en <strong>assembleur</strong>, documenté et présenté en vidéo. Une maîtrise rare du très bas niveau, avec dépôt GitHub propre et script de déploiement.
+            <p class="project__desc">
+              Conception d’un outil de stockage sécurisé en assembleur, documenté et livré avec script de déploiement. Projet démontrant une maîtrise du bas niveau et des bonnes pratiques de protection des secrets.
             </p>
             <div class="project__stats">
-              <span><code>15/20</code></span>
-              <span data-i18n="projects.pwm.stat">Démo vidéo livrée</span>
+              <span>Livraison d’un prototype fonctionnel</span>
+              <span>Mise en valeur des compétences en ingénierie logicielle</span>
             </div>
             <div class="project__links">
-              <a href="https://github.com/MohamedBAYA" class="project__link" target="_blank" rel="noopener">→ GitHub</a>
+              <a href="https://github.com/MohamedBAYA/password-manager-ASM" class="project__link" target="_blank" rel="noopener">→ GitHub</a>
             </div>
           </div>
         </article>
@@ -474,55 +448,60 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         CERTIFICATIONS
+         CERTIFICATIONS / DIPLÔMES
          ═══════════════════════════════════════════════════════════════════ -->
     <section class="section" id="certifs">
       <header class="section__header">
         <span class="section__num">05</span>
-        <h2 class="section__title" data-i18n="certifs.title">$ ls ./certifications</h2>
+        <h2 class="section__title">Certifications / Diplômes</h2>
         <span class="section__rule"></span>
       </header>
 
+      <p class="section__subtitle">Diplômes et certifications sélectionnés pour mettre en valeur mon parcours technique et mes acquis.</p>
+
       <div class="certifs">
-        <article class="certif">
-          <h3 class="certif__title">LPIC-303</h3>
-          <p class="certif__org">Linux Professional Institute · Security</p>
-          <span class="certif__score"><code>16/20</code></span>
-        </article>
-        <article class="certif">
-          <h3 class="certif__title">CCNA 1 &amp; 2</h3>
-          <p class="certif__org">Cisco Networking Academy</p>
-          <span class="certif__score" data-i18n="certifs.completed">Validé</span>
-        </article>
-        <article class="certif">
-          <h3 class="certif__title">CCNA Security</h3>
-          <p class="certif__org">Cisco · Network Security</p>
-          <span class="certif__score" data-i18n="certifs.completed">Validé</span>
-        </article>
-        <article class="certif">
-          <h3 class="certif__title">Azure FYC</h3>
-          <p class="certif__org">Microsoft · Fundamentals</p>
-          <span class="certif__score" data-i18n="certifs.completed">Validé</span>
-        </article>
-        <article class="certif certif--soon">
-          <h3 class="certif__title">GCP Associate</h3>
-          <p class="certif__org">Google Cloud · Cloud Engineer</p>
-          <span class="certif__score" data-i18n="certifs.prep">En préparation</span>
-        </article>
-        <article class="certif certif--soon">
-          <h3 class="certif__title">ESGI Mastère</h3>
-          <p class="certif__org" data-i18n="certifs.esgi">Cybersécurité · Promotion 2025-2026</p>
-          <span class="certif__score" data-i18n="certifs.inProgress">En cours</span>
-        </article>
-        <article class="certif">
-          <h3 class="certif__title">TOEIC</h3>
-          <p class="certif__org">ETS · English Proficiency</p>
-          <span class="certif__score"><code>890/990</code></span>
-        </article>
+        <div class="certifs__group">
+          <h4 class="certifs__groupTitle">Obtenus</h4>
+          <article class="certif">
+            <h3 class="certif__title">Bachelor</h3>
+            <p class="certif__org">ESGI · Mention Bien</p>
+            <span class="certif__score">Obtenu</span>
+          </article>
+
+          <article class="certif">
+            <h3 class="certif__title">TOEIC</h3>
+            <p class="certif__org">ETS · Niveau anglais</p>
+            <div style="display:flex; gap:0.6rem; align-items:center;">
+              <span class="certif__score">Obtenu</span>
+              <span class="certif__score"><code>890/990</code></span>
+            </div>
+          </article>
+        </div>
+
+        <div class="certifs__group">
+          <h4 class="certifs__groupTitle">En préparation</h4>
+          <article class="certif certif--soon">
+            <h3 class="certif__title">Mastère Cybersécurité</h3>
+            <p class="certif__org">ESGI · Promotion 2025-2026</p>
+            <span class="certif__score">En cours</span>
+          </article>
+
+          <article class="certif certif--goal">
+            <h3 class="certif__title">BTL1</h3>
+            <p class="certif__org">Blue Team Level 1</p>
+            <span class="certif__goal">Objectif</span>
+          </article>
+
+          <article class="certif certif--goal">
+            <h3 class="certif__title">CyberOps Associate</h3>
+            <p class="certif__org">Cisco</p>
+            <span class="certif__goal">Objectif</span>
+          </article>
+        </div>
       </div>
 
-      <div class="regul" aria-label="Cadre réglementaire">
-        <h3 class="regul__title" data-i18n="certifs.regulTitle">// Cadre réglementaire maîtrisé</h3>
+      <div class="regul">
+        <h4 class="regul__title">~ Cadre réglementaire maîtrisé</h4>
         <div class="regul__tags">
           <span class="regul__tag">NIS2</span>
           <span class="regul__tag">DORA</span>
