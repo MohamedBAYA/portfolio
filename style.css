@@ -57,6 +57,10 @@ code { font-family: var(--font-mono); }
 
 ::selection { background: var(--accent); color: var(--bg); }
 
+/* Fondu lors du changement de langue (voir applyLang() dans script.js) */
+[data-i18n] { transition: opacity 0.18s var(--ease); }
+.i18n-fading { opacity: 0 !important; }
+
 /* Subtle scanlines on body for atmosphere */
 body::before {
   content: '';
@@ -193,6 +197,11 @@ body::before {
   .menu-burger--open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   .menu-burger--open span:nth-child(2) { opacity: 0; }
   .menu-burger--open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  .hero__stats {
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -360,21 +369,19 @@ body::before {
 .hero__stats-card {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  min-width: 220px;
-  max-width: 260px;
-  padding: 1rem 1.2rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
 }
 .hero__stats-card strong {
+  font-size: 1.8rem;
+  font-weight: 700;
   color: var(--fg);
+  line-height: 1;
+  margin-bottom: 0.3rem;
 }
 .hero__stats-card span {
+  font-size: 0.8rem;
   color: var(--fg-dim);
-  text-transform: none;
-  letter-spacing: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .hero__stats-card--soon {
   border-color: rgba(148, 163, 184, 0.3);
@@ -424,7 +431,7 @@ body::before {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .section__num {
   font-family: var(--font-mono);
@@ -445,7 +452,7 @@ body::before {
   font-family: var(--font-mono);
   font-size: 0.97rem;
   line-height: 1.7;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 .section__rule {
   flex: 1;
@@ -925,11 +932,12 @@ body::before {
   border: 1px solid rgba(125, 211, 252, 0.2);
   border-radius: 4px;
 }
-.certif--soon {
+.certif--soon,
+.certif--goal {
   opacity: 1;
   border-style: dashed;
-  border-color: rgba(251, 191, 36, 0.45); /* orange outline */
-  background: transparent;
+  border-color: rgba(251, 191, 36, 0.45);
+  background: rgba(251, 191, 36, 0.04);
 }
 .certif--soon .certif__score {
   color: var(--warn);
@@ -937,20 +945,17 @@ body::before {
   border-color: rgba(251, 191, 36, 0.18);
 }
 
-/* Objectif label for certification goals (different from 'En cours') */
 .certif__goal {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--bg);
+  color: var(--warn);
   margin-top: 0.3rem;
   align-self: flex-start;
-  padding: 0.22rem 0.7rem;
-  background: linear-gradient(90deg, var(--accent-bright), var(--accent));
-  border: 1px solid rgba(34, 211, 238, 0.18);
-  border-radius: 6px;
-  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.18);
+  border-radius: 0.5rem;
 }
-.certif--goal { opacity: 1; }
 
 .regul {
   padding: 2rem;

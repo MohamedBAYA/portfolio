@@ -5,5 +5,5 @@ Preferred-Languages: fr, en
 Canonical: https://mohamedbaya.dev/.well-known/security.txt
 Policy: https://mohamedbaya.dev/#contact
 
-# Si tu trouves une faille sur ce site, merci de m'en informer.
+# Si vous trouvez une faille sur ce site, merci de m'en informer.
 # If you find a vulnerability on this site, please let me know.
