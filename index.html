@@ -53,18 +53,25 @@
   <!-- Self-hosted fonts (à ajouter dans /assets/fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Barre de progression de lecture -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
   <!-- ═══════════════════════════════════════════════════════════════════
        BOOT SEQUENCE — joue 1 fois au premier chargement, skippable
        ═══════════════════════════════════════════════════════════════════ -->
   <div id="boot" class="boot" aria-hidden="true">
-    <pre class="boot__output" id="boot-output"></pre>
-    <button class="boot__skip" id="boot-skip" type="button">[ press to skip ]</button>
+    <div class="boot__brand">
+      <span class="boot__mark" aria-hidden="true"></span>
+      <span class="boot__word">mohamed<span>baya</span></span>
+    </div>
+    <div class="boot__bar"><span class="boot__fill" id="boot-progress"></span></div>
+    <button class="boot__skip" id="boot-skip" type="button">Skip →</button>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════
@@ -569,6 +576,11 @@
       </p>
     </div>
   </footer>
+
+  <!-- Retour en haut -->
+  <button class="to-top" id="to-top" type="button" aria-label="Remonter en haut">
+    <span aria-hidden="true">↑</span>
+  </button>
 
   <script src="script.js" defer></script>
 </body>

@@ -11,17 +11,8 @@
      1. BOOT SEQUENCE
      ─────────────────────────────────────────────────────────────── */
   const bootEl = document.getElementById('boot');
-  const bootOutput = document.getElementById('boot-output');
+  const bootProgress = document.getElementById('boot-progress');
   const bootSkip = document.getElementById('boot-skip');
-
-  const bootLines = [
-    { text: '> initializing portfolio.sys...', cls: '' },
-    { text: '[ OK ] mounting /home/mohamed', cls: 'ok' },
-    { text: '[ OK ] loading skills database', cls: 'ok' },
-    { text: '[ OK ] decrypting projects.tar.gz', cls: 'ok' },
-    { text: '[ OK ] establishing secure connection', cls: 'ok' },
-    { text: '[INFO] welcome - system ready', cls: 'info' },
-  ];
 
   const hasBooted = sessionStorage !== undefined
     ? (() => { try { return sessionStorage.getItem('booted'); } catch { return null; } })()
@@ -30,27 +21,22 @@
   function endBoot() {
     if (!bootEl) return;
     bootEl.classList.add('boot--gone');
-    setTimeout(() => bootEl.remove(), 500);
+    setTimeout(() => bootEl.remove(), 550);
     try { sessionStorage.setItem('booted', '1'); } catch {}
   }
 
   if (hasBooted || prefersReducedMotion) {
     endBoot();
-  } else if (bootEl && bootOutput) {
-    let i = 0;
+  } else if (bootEl && bootProgress) {
+    let pct = 0;
     const interval = setInterval(() => {
-      if (i >= bootLines.length) {
+      pct = Math.min(100, pct + (8 + Math.random() * 16));
+      bootProgress.style.width = pct + '%';
+      if (pct >= 100) {
         clearInterval(interval);
-        setTimeout(endBoot, 400);
-        return;
+        setTimeout(endBoot, 350);
       }
-      const line = bootLines[i];
-      const span = document.createElement('span');
-      span.className = line.cls;
-      span.textContent = line.text + '\n';
-      bootOutput.appendChild(span);
-      i++;
-    }, 220);
+    }, 130);
 
     bootSkip?.addEventListener('click', () => {
       clearInterval(interval);
@@ -394,6 +380,103 @@
       s.style.transform = 'translateY(30px)';
       s.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
       observer.observe(s);
+    });
+  }
+
+  /* ───────────────────────────────────────────────────────────────
+     6. PROGRESSION DE LECTURE · HEADER · RETOUR EN HAUT
+     ─────────────────────────────────────────────────────────────── */
+  const progressBar = document.getElementById('scroll-progress');
+  const header = document.querySelector('.header');
+  const toTop = document.getElementById('to-top');
+  let scrollTicking = false;
+
+  function onScroll() {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollable = doc.scrollHeight - doc.clientHeight;
+    const ratio = scrollable > 0 ? scrollTop / scrollable : 0;
+
+    if (progressBar) progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+    header?.classList.toggle('is-scrolled', scrollTop > 8);
+    toTop?.classList.toggle('is-visible', scrollTop > 600);
+    scrollTicking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(onScroll);
+      scrollTicking = true;
+    }
+  }, { passive: true });
+  onScroll();
+
+  toTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  });
+
+  /* ───────────────────────────────────────────────────────────────
+     7. SCROLL-SPY · lien de navigation actif
+     ─────────────────────────────────────────────────────────────── */
+  if ('IntersectionObserver' in window) {
+    const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
+    const linkMap = new Map();
+    navLinks.forEach(link => {
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target) linkMap.set(target, link);
+    });
+
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('is-active'));
+          linkMap.get(e.target)?.classList.add('is-active');
+        }
+      });
+    }, { threshold: 0, rootMargin: '-45% 0px -50% 0px' });
+
+    linkMap.forEach((_, target) => spy.observe(target));
+  }
+
+  /* ───────────────────────────────────────────────────────────────
+     8. SPOTLIGHT · halo qui suit le curseur sur les cartes
+     ─────────────────────────────────────────────────────────────── */
+  if (!prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
+    const cards = document.querySelectorAll(
+      '.parcours__card, .skill, .project, .certif, .contact__link, .about__card, .progression, .regul'
+    );
+    cards.forEach(card => {
+      card.addEventListener('pointermove', (ev) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (ev.clientX - rect.left) + 'px');
+        card.style.setProperty('--my', (ev.clientY - rect.top) + 'px');
+      });
+    });
+  }
+
+  /* ───────────────────────────────────────────────────────────────
+     9. RÉVÉLATION EN CASCADE · cartes
+     ─────────────────────────────────────────────────────────────── */
+  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+    const groups = document.querySelectorAll(
+      '.parcours__grid, .skills, .projects, .certifs__group, .contact__links'
+    );
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    groups.forEach(group => {
+      Array.from(group.children).forEach((child, i) => {
+        child.classList.add('reveal-item');
+        child.style.setProperty('--reveal-delay', Math.min(i, 6) * 70 + 'ms');
+        revealObserver.observe(child);
+      });
     });
   }
 })();
